@@ -1,4 +1,10 @@
 header:
+    - titles:
+        # @start locale config
+        en      : &EN       Home
+        # @end locale config
+      url: /
+      
   - titles:
       # @start locale config
       en      : &EN       Archive
