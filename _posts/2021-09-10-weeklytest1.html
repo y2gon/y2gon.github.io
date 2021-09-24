@@ -1,3 +1,8 @@
+---
+title: 210910weeklytest1
+tags: Test
+---
+
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
@@ -4551,7 +4556,7 @@ form{
   .bp3-running-text table th, table.bp3-html-table th{
     color:#182026;
     font-weight:600; }
-  
+
   .bp3-running-text table td,
   table.bp3-html-table td{
     color:#182026; }
@@ -14238,17 +14243,17 @@ a.anchor-link {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 },
                 "HTML-CSS": {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14281,14 +14286,14 @@ a.anchor-link {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">head</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span><span class="s2">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36&quot;</span><span class="p">}</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://news.naver.com/main/list.naver?mode=LS2D&amp;mid=</span><span class="si">{}</span><span class="s1">&amp;sid1=101&amp;date=</span><span class="si">{}</span><span class="s1">&amp;page=</span><span class="si">{}</span><span class="s1">&#39;</span>
 <span class="n">sections</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;shm&amp;sid2=259&#39;</span><span class="p">:</span><span class="s1">&#39;금융&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;shm&amp;sid2=258&#39;</span><span class="p">:</span><span class="s1">&#39;증권&#39;</span><span class="p">,</span> 
-            <span class="s1">&#39;shm&amp;sid2=261&#39;</span><span class="p">:</span><span class="s1">&#39;산업/재계&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;shm&amp;sid2=258&#39;</span><span class="p">:</span><span class="s1">&#39;증권&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;shm&amp;sid2=261&#39;</span><span class="p">:</span><span class="s1">&#39;산업/재계&#39;</span><span class="p">,</span>
             <span class="s1">&#39;shm&amp;sid2=771&#39;</span><span class="p">:</span><span class="s1">&#39;중기/벤처&#39;</span><span class="p">,</span>
             <span class="s1">&#39;shm&amp;sid2=260&#39;</span><span class="p">:</span><span class="s1">&#39;부동산&#39;</span><span class="p">,</span>
             <span class="s1">&#39;shm&amp;sid2=262&#39;</span><span class="p">:</span><span class="s1">&#39;글로벌 경제&#39;</span><span class="p">,</span>
             <span class="s1">&#39;shm&amp;sid2=310&#39;</span><span class="p">:</span><span class="s1">&#39;생활경제&#39;</span><span class="p">,</span>
             <span class="s1">&#39;shm&amp;sid2=263&#39;</span><span class="p">:</span><span class="s1">&#39;경제 일반&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;sec&#39;</span><span class="p">:</span><span class="s1">&#39;속보&#39;</span><span class="p">}</span> 
+            <span class="s1">&#39;sec&#39;</span><span class="p">:</span><span class="s1">&#39;속보&#39;</span><span class="p">}</span>
 <span class="n">dates</span><span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">20210903</span><span class="p">,</span> <span class="mi">202109010</span><span class="p">))</span>
 <span class="n">total</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sections&#39;</span><span class="p">,</span><span class="s1">&#39;dates&#39;</span><span class="p">,</span><span class="s1">&#39;address&#39;</span><span class="p">,</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;contents&#39;</span><span class="p">])</span>
 <span class="n">del_context1</span> <span class="o">=</span> <span class="s1">&#39;// flash 오류를 우회하기 위한 함수 추가&#39;</span>
@@ -14322,7 +14327,7 @@ a.anchor-link {
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
 
@@ -14378,7 +14383,7 @@ a.anchor-link {
             <span class="nb">print</span><span class="p">(</span><span class="n">sections</span><span class="p">[</span><span class="n">section</span><span class="p">],</span> <span class="n">date</span><span class="p">,</span> <span class="n">page</span><span class="p">)</span>
             <span class="n">r</span><span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">section</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">page</span><span class="p">),</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">head</span><span class="p">)</span>
             <span class="n">bs</span> <span class="o">=</span> <span class="n">BS</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;lxml&#39;</span><span class="p">)</span>
-            
+
             <span class="n">bs_rt</span> <span class="o">=</span> <span class="n">bs</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;main_content&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
             <span class="n">links</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">,</span><span class="s1">&#39;address&#39;</span><span class="p">])</span>
 
@@ -14386,22 +14391,22 @@ a.anchor-link {
             <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bs_rt</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;https&#39;</span><span class="p">:</span>
                     <span class="n">add_list_dict</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]]</span><span class="o">=</span><span class="mi">1</span>
-                    
+
             <span class="n">add_list</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">add_list_dict</span><span class="p">)</span>
-            
+
             <span class="k">if</span> <span class="n">checking_end_loop</span> <span class="o">==</span> <span class="n">add_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
                 <span class="n">page</span> <span class="o">=</span> <span class="mi">100</span>
-            
+
             <span class="n">page</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="n">checking_end_loop</span> <span class="o">=</span> <span class="n">add_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 
             <span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="n">add_list</span><span class="p">:</span>
-                
+
                 <span class="n">r2</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">head</span><span class="p">)</span>
                 <span class="n">bs2</span> <span class="o">=</span> <span class="n">BS</span><span class="p">(</span><span class="n">r2</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;lxml&#39;</span><span class="p">)</span>
                 <span class="n">title</span> <span class="o">=</span> <span class="n">bs2</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h3&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;articleTitle&quot;</span><span class="p">)</span>
-                
+
                 <span class="k">if</span> <span class="n">title</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">text</span>
                     <span class="n">contents</span> <span class="o">=</span> <span class="n">bs2</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;articleBodyContents&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
@@ -14409,7 +14414,7 @@ a.anchor-link {
                     <span class="n">contents</span><span class="o">=</span><span class="n">contents</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">del_context1</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
                     <span class="n">contents</span><span class="o">=</span><span class="n">contents</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">del_context2</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
                     <span class="n">contents</span><span class="o">=</span><span class="n">contents</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-                        
+
              <span class="c1"># print(date, title)</span>
                     <span class="n">article</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sections&#39;</span> <span class="p">:</span> <span class="n">sections</span><span class="p">[</span><span class="n">section</span><span class="p">],</span>
                                 <span class="s1">&#39;dates&#39;</span><span class="p">:</span><span class="n">date</span><span class="p">,</span>
@@ -14431,7 +14436,7 @@ a.anchor-link {
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14444,7 +14449,7 @@ a.anchor-link {
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14465,10 +14470,10 @@ a.anchor-link {
 <span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\bs4\builder\_lxml.py</span> in <span class="ansi-cyan-fg">start</span><span class="ansi-blue-intense-fg ansi-bold">(self, name, attrs, nsmap)</span>
 <span class="ansi-green-fg">    182</span>         nsprefix <span class="ansi-yellow-intense-fg ansi-bold">=</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_prefix_for_namespace<span class="ansi-yellow-intense-fg ansi-bold">(</span>namespace<span class="ansi-yellow-intense-fg ansi-bold">)</span>
 <span class="ansi-green-intense-fg ansi-bold">--&gt; 183</span><span class="ansi-yellow-intense-fg ansi-bold">         </span>self<span class="ansi-yellow-intense-fg ansi-bold">.</span>soup<span class="ansi-yellow-intense-fg ansi-bold">.</span>handle_starttag<span class="ansi-yellow-intense-fg ansi-bold">(</span>name<span class="ansi-yellow-intense-fg ansi-bold">,</span> namespace<span class="ansi-yellow-intense-fg ansi-bold">,</span> nsprefix<span class="ansi-yellow-intense-fg ansi-bold">,</span> attrs<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">    184</span> 
+<span class="ansi-green-fg">    184</span>
 
 <span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\bs4\__init__.py</span> in <span class="ansi-cyan-fg">handle_starttag</span><span class="ansi-blue-intense-fg ansi-bold">(self, name, namespace, nsprefix, attrs)</span>
-<span class="ansi-green-fg">    463</span> 
+<span class="ansi-green-fg">    463</span>
 <span class="ansi-green-intense-fg ansi-bold">--&gt; 464</span><span class="ansi-yellow-intense-fg ansi-bold">         tag = Tag(self, self.builder, name, namespace, nsprefix, attrs,
 </span><span class="ansi-green-fg">    465</span>                   self.currentTag, self._most_recent_element)
 
@@ -14482,17 +14487,17 @@ a.anchor-link {
 <span class="ansi-green-intense-fg ansi-bold">--&gt; 163</span><span class="ansi-yellow-intense-fg ansi-bold">             </span><span class="ansi-green-intense-fg ansi-bold">for</span> attr <span class="ansi-green-intense-fg ansi-bold">in</span> list<span class="ansi-yellow-intense-fg ansi-bold">(</span>attrs<span class="ansi-yellow-intense-fg ansi-bold">.</span>keys<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
 <span class="ansi-green-fg">    164</span>                 <span class="ansi-green-intense-fg ansi-bold">if</span> attr <span class="ansi-green-intense-fg ansi-bold">in</span> universal <span class="ansi-green-intense-fg ansi-bold">or</span> <span class="ansi-yellow-intense-fg ansi-bold">(</span>tag_specific <span class="ansi-green-intense-fg ansi-bold">and</span> attr <span class="ansi-green-intense-fg ansi-bold">in</span> tag_specific<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
 
-<span class="ansi-red-intense-fg ansi-bold">KeyboardInterrupt</span>: 
+<span class="ansi-red-intense-fg ansi-bold">KeyboardInterrupt</span>:
 
 During handling of the above exception, another exception occurred:
 
 <span class="ansi-red-intense-fg ansi-bold">KeyboardInterrupt</span>                         Traceback (most recent call last)
 <span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-8-db2d2b8dd2d5&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">     27</span> 
+<span class="ansi-green-fg">     27</span>
 <span class="ansi-green-fg">     28</span>                 r2 <span class="ansi-yellow-intense-fg ansi-bold">=</span> requests<span class="ansi-yellow-intense-fg ansi-bold">.</span>get<span class="ansi-yellow-intense-fg ansi-bold">(</span>address<span class="ansi-yellow-intense-fg ansi-bold">,</span> headers<span class="ansi-yellow-intense-fg ansi-bold">=</span>head<span class="ansi-yellow-intense-fg ansi-bold">)</span>
 <span class="ansi-green-intense-fg ansi-bold">---&gt; 29</span><span class="ansi-yellow-intense-fg ansi-bold">                 </span>bs2 <span class="ansi-yellow-intense-fg ansi-bold">=</span> BS<span class="ansi-yellow-intense-fg ansi-bold">(</span>r2<span class="ansi-yellow-intense-fg ansi-bold">.</span>text<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-blue-intense-fg ansi-bold">&#39;lxml&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
 <span class="ansi-green-fg">     30</span>                 title <span class="ansi-yellow-intense-fg ansi-bold">=</span> bs2<span class="ansi-yellow-intense-fg ansi-bold">.</span>find<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;h3&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> id<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-blue-intense-fg ansi-bold">&#34;articleTitle&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">     31</span> 
+<span class="ansi-green-fg">     31</span>
 
 <span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\bs4\__init__.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-intense-fg ansi-bold">(self, markup, features, builder, parse_only, from_encoding, exclude_encodings, **kwargs)</span>
 <span class="ansi-green-fg">    226</span>             self<span class="ansi-yellow-intense-fg ansi-bold">.</span>reset<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
@@ -14503,7 +14508,7 @@ During handling of the above exception, another exception occurred:
 
 <span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\bs4\__init__.py</span> in <span class="ansi-cyan-fg">_feed</span><span class="ansi-blue-intense-fg ansi-bold">(self)</span>
 <span class="ansi-green-fg">    287</span>         self<span class="ansi-yellow-intense-fg ansi-bold">.</span>builder<span class="ansi-yellow-intense-fg ansi-bold">.</span>reset<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">    288</span> 
+<span class="ansi-green-fg">    288</span>
 <span class="ansi-green-intense-fg ansi-bold">--&gt; 289</span><span class="ansi-yellow-intense-fg ansi-bold">         </span>self<span class="ansi-yellow-intense-fg ansi-bold">.</span>builder<span class="ansi-yellow-intense-fg ansi-bold">.</span>feed<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">.</span>markup<span class="ansi-yellow-intense-fg ansi-bold">)</span>
 <span class="ansi-green-fg">    290</span>         <span class="ansi-red-intense-fg ansi-bold"># Close out any unfinished strings and close all the open tags.</span>
 <span class="ansi-green-fg">    291</span>         self<span class="ansi-yellow-intense-fg ansi-bold">.</span>endData<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
@@ -14523,10 +14528,10 @@ During handling of the above exception, another exception occurred:
 
 <span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\bs4\builder\_lxml.py</span> in <span class="ansi-cyan-fg">close</span><span class="ansi-blue-intense-fg ansi-bold">(self)</span>
 <span class="ansi-green-fg">    140</span>             <span class="ansi-green-intense-fg ansi-bold">raise</span> ParserRejectedMarkup<span class="ansi-yellow-intense-fg ansi-bold">(</span>str<span class="ansi-yellow-intense-fg ansi-bold">(</span>e<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">    141</span> 
+<span class="ansi-green-fg">    141</span>
 <span class="ansi-green-intense-fg ansi-bold">--&gt; 142</span><span class="ansi-yellow-intense-fg ansi-bold">     </span><span class="ansi-green-intense-fg ansi-bold">def</span> close<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
 <span class="ansi-green-fg">    143</span>         self<span class="ansi-yellow-intense-fg ansi-bold">.</span>nsmaps <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-yellow-intense-fg ansi-bold">[</span>self<span class="ansi-yellow-intense-fg ansi-bold">.</span>DEFAULT_NSMAPS<span class="ansi-yellow-intense-fg ansi-bold">]</span>
-<span class="ansi-green-fg">    144</span> 
+<span class="ansi-green-fg">    144</span>
 
 <span class="ansi-red-intense-fg ansi-bold">KeyboardInterrupt</span>: </pre>
 </div>
@@ -14542,7 +14547,7 @@ During handling of the above exception, another exception occurred:
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span>
 </pre></div>
 
      </div>
