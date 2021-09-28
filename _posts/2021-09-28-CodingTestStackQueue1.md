@@ -5,7 +5,7 @@ tags: encore algorithm
 
 * [코딩테스트 연습>스택/큐>주식가격](https://programmers.co.kr/learn/courses/30/lessons/42584)
 
->주식가격
+>## 주식가격
 >
 >문제 설명
 >
