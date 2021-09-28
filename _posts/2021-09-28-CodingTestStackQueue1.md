@@ -39,6 +39,8 @@ tags: encore algorithm
 >
 >※ 공지 - 2019년 2월 28일 지문이 리뉴얼되었습니다.
 
+
+### Code
 ```python
 def solution(prices):
     answer = []
@@ -81,7 +83,7 @@ def solution(prices):
 ```python
 solution([50, 10, 20, 30, 20, 30])
 ```
-[1, 4, 3, 1, 1, 0]
+`[1, 4, 3, 1, 1, 0]`
 
 ### Error Comment
 
