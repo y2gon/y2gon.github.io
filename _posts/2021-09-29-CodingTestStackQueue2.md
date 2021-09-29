@@ -32,8 +32,8 @@ tags: ENCORE Algorithm CodingTest
 >
 >       progresses	            speeds	        return
 >     [93, 30, 55]	          [1, 30, 5]	        [2, 1]
-> [95, 90, 99, 99, 80, 99]	 [1, 1, 1, 1, 1, 1]	   [1, 3, 2]
 >
+
 >#### 입출력 예 설명
 >
 >입출력 예 #1
