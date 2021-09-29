@@ -1,9 +1,9 @@
 ---
 title: 알고리즘 STEP 1 Stack/Queue 1 주식 가격
-tags: encore algorithm
+tags: ENCORE Algorithm CodingTest
 ---
 
-* [코딩테스트 연습>스택/큐>주식가격](https://programmers.co.kr/learn/courses/30/lessons/42584)
+* 링크 : [코딩테스트 연습>스택/큐>주식가격](https://programmers.co.kr/learn/courses/30/lessons/42584)
 
 >### 주식가격
 
