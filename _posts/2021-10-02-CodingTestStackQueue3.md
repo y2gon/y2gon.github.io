@@ -154,7 +154,7 @@ def solution(bridge_length, weight, truck_weights):
 
 
   * collections     ([Python Documentation link](https://docs.python.org/ko/3/library/collections.html))
-    '1'. 문제 해결에 어려움이 있어, 그 과정 중 다른 사람의 코드를 참조함. (참조한 코드 자체는 제대로 이해할 수 없었으며, 위의 코드는 참조한 코드와는 거의 무관함.)
+    1. 문제 해결에 어려움이 있어, 그 과정 중 다른 사람의 코드를 참조함. (참조한 코드 자체는 제대로 이해할 수 없었으며, 위의 코드는 참조한 코드와는 거의 무관함.)
       - 해당 code 에서 사용된 collections 를 사용해봄.
       - 모듈 정의
 
@@ -182,13 +182,13 @@ def solution(bridge_length, weight, truck_weights):
     >
     >UserString: 더 쉬운 문자열 서브 클래싱을 위해 문자열 객체를 감싸는 래퍼
 
-    '2'. deque 객체
+    2. deque 객체
 
 
     > 데크는 스택과 큐를 일반화 한 것입니다 (이름은 《deck》이라고 발음하며 《double-ended queue》의 약자입니다). 데크는 스레드 안전하고 메모리 효율적인 데크의 양쪽 끝에서의 추가(append)와 팝(pop)을 양쪽에서 거의 같은 O(1) 성능으로 지원합니다.
     >
     >list 객체는 유사한 연산을 지원하지만, 빠른 고정 길이 연산에 최적화되어 있으며, 하부 데이터 표현의 크기와 위치를 모두 변경하는 pop(0)과 insert(0, v) 연산에 대해 O(n) 메모리 이동 비용이 발생합니다.
 
-    '3'. deque 의 활용
+    3. deque 의 활용
       - 초기 풀이 방법을 수정하고자 할 때, 다리 길이를 가진 배열의 초기화에 `bridge = collections.deque([0]*bridge_length)` 로 활용하였으나, 최종 code 에서는 필요없어짐.
       - pop / popleft , append / appendleft 와 배열의 양쪽에서 접근하여 값을 추가/인출 할 수 있음. (기존의 list 를 활용한 방법과 어떤차이가 있는지는 모르겠음. )
