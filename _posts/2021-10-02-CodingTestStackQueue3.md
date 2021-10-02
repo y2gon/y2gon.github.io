@@ -3,7 +3,7 @@ title: 알고리즘 STEP 1 Stack/Queue 3 다리를 지나는 트럭
 tags: ENCORE Algorithm CodingTest Deque Collections
 ---
 
-* 링크: [코딩테스트 연습>스택/큐>다리를 지나는 트럭](https://programmers.co.kr/learn/courses/30/lessons/42584)
+* 링크: [코딩테스트 연습>스택/큐>다리를 지나는 트럭](https://programmers.co.kr/learn/courses/30/lessons/42583)
 
 >### 다리를 지나는 트럭
 
