@@ -1,6 +1,6 @@
 ---
 title: 알고리즘 STEP 1 Stack/Queue 2 기능개발
-tags: ENCORE Algorithm CodingTest
+tags: ENCORE Algorithm CodingTest Queue
 ---
 
 * 링크: [코딩테스트 연습>스택/큐>기능개발](https://programmers.co.kr/learn/courses/30/lessons/42584)
