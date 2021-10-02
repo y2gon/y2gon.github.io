@@ -45,7 +45,7 @@ tags: ENCORE Algorithm CodingTest Deque Collections
 |100|	100|	[10,10,10,10,10,10,10,10,10,10]|	110|
 
 
-### Code1 (최종 Test 중 최장 9781.72ms 소요, 그러나 재시도 시, 시간초과로 실패 )
+### Code1 (최장 9781.72ms 소요, 그러나 재시도 시, 시간초과로 실패 )
 ```python
 def solution(bridge_length, weight, truck_weights):
     counter=0
