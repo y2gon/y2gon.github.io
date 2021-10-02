@@ -163,6 +163,7 @@ def solution(bridge_length, weight, truck_weights):
     >
     > 파이썬의 범용 내장 컨테이너 dict, list, set 및 tuple에 대한 대안을 제공하는 특수 컨테이너 데이터형을 구현
     >
+    >
     > namedtuple(): 이름 붙은 필드를 갖는 튜플 서브 클래스를 만들기 위한 팩토리 함수
     >
     >deque:  양쪽 끝에서 빠르게 추가와 삭제를 할 수 있는 리스트류 컨테이너
