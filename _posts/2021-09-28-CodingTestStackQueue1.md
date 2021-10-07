@@ -124,3 +124,43 @@ solution([50, 10, 20, 30, 20, 30])
 
 
   - 최종 stack 에서 꺼낸값을 정렬할 때 반복문을 쓰지 않고자 dictionary 를 사용했으나, 정렬된 dictionary 값이 tuple 로 나오는데 이를 list 로 변환하는 최적의 방법을 찾지 못해 결국 반복문을 다시 썼음.
+
+
+  ## 다시 풀기
+
+  ### Code
+  ```python
+  def solution(price):
+
+    idx = 0
+    answer = []
+
+    for x in price:
+        counter = 1
+        idx += 1
+
+        while  idx + counter < len(price) and x <= price[idx + counter-1]:
+            counter += 1
+
+        if idx == len(price):
+            counter = 0
+
+        answer.append(counter)
+
+    return answer
+  ```
+  ### error Comments
+
+* 기존에 각 배열의 값을 다음 값과 비교하면서 문제를 풀도록 작성된 code 의 경우, 이해하기 어려우며 , 주식 등락에 대한 경우의 수를 분기하여 이에 대한 각각의 code 를 작성해야 했기 때문에 문제가 있었다.
+
+
+* 따라서 해당 내용을 가장 마지막 값을 제외한 전체에 통일된 하나의 규칙을 적용 (단 stack 대신 counter 를 사용하여 결과값을 도출)하여 다시 문제를 품
+
+
+* 이와 같이 풀기 위해 문제를 다시 이해할 필요가 있었다. 특히 최고점을 기록한 이후, 떨어지는 경우에 그 결과값은 왜 1이 되는가에 대한 경우의 예시가 제대로 나오지 않아 이해에 어려움이 있었다.
+
+
+* 결과적으로 이중 반복문으로 구성하여
+  - 상위 반복문에서는 price 를 순서대로 검사를 수행하도록 구성하였으며,
+  - 하위 반복문에서는 값이 오르거나 유지된 이후, 기준값으로 다시 돌아오는 기간을 셀 수 있도록 구성하였다.
+  
