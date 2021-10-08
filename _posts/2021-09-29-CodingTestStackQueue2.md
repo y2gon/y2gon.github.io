@@ -87,6 +87,30 @@ solution([95, 90, 99, 99, 80, 99],[1, 1, 1, 1, 1, 1])
 
   - len(progresses) > 0 조건을 추가하여 해당 error 해결
 
+### 2차 풀이
+```python
+def solution(progresses, speeds):
+    days = 1
+    answer = []
+    while len(progresses) > 0:
+        counter = 0
+        while len(progresses) > 0 and progresses[0] + speeds[0]* days >=100:
+            progresses.pop(0)
+            speeds.pop(0)
+            counter += 1
+        if counter > 0:
+            answer.append(counter)
+        days += 1
+
+    return answer
+```
+
+### Error Comments
+
+*  다시 문제를 보니 매일 progresses 값들에 굳이 값을 올려줄 필요가 없었다.
+
+
+*  날짜수를 반복문을 통해 오려주면서, progresses[0] 값만 변경해서 100 을 넘는지 확인하고, True 일 경우 , pop 으로 꺼내서 다시 progresses[0] 의 값을 확인하는 반복문을 통해 이전보다 간단하게 풀이가 가능했음.
 
 ### 다른 사람 풀이 보기
 
