@@ -191,3 +191,29 @@ def solution(bridge_length, weight, truck_weights):
     * deque 의 활용
       - 초기 풀이 방법을 수정하고자 할 때, 다리 길이를 가진 배열의 초기화에 `bridge = collections.deque([0]*bridge_length)` 로 활용하였으나, 최종 code 에서는 필요없어짐.
       - pop / popleft , append / appendleft 와 배열의 양쪽에서 접근하여 값을 추가/인출 할 수 있음. (기존의 list 를 활용한 방법과 어떤차이가 있는지는 모르겠음. )
+
+### code 2차
+```python
+def solution (bridge_length, weight, truck_weights):
+   bridge = [0] * bridge_length
+   time = 0
+   loading_weight = 0
+
+   while len(truck_weights) > 0:
+       time += 1
+       loading_weight -= bridge.pop(0)
+
+       if loading_weight + truck_weights[0] <= weight:
+           bridge.append(truck_weights.pop(0))
+           loading_weight += bridge[-1]
+
+       else:
+           bridge.append(0)
+
+   time += bridge_length
+
+   return time
+```
+
+### Error Comments
+  * 1차 시도에서 가장 문제가 됐었던, 5번 test 에 대한 시간 초과 이유는, 반복문에서 계속적으로 list 의 합을 구하는 과정이 생각보다 많은 proccess 를 요구하기 때문이였다. 해당 내용을 수정하니, 복잡한 경우의 수를 모두 배제 하고 시간 초과를 막을 수 있었다.  
