@@ -1,6 +1,21 @@
 ---
 layout: home
 ---
+
+## [Rust from Scratch](https://y2gon.github.io/rust from scratch)
+- Rust 기초 및 관련 학습 내용
+
+
+## [Toy Projects](https://y2gon.github.io/toy projects)
+- Rust 를 사용하여 작성한 Toy projects
+
+
+## [Problem Solving](https://y2gon.github.io/problem solving)
+- 주로 파이썬을 사용하여 작성된 Coding Test 문제들
+
+
+## [Others](https://y2gon.github.io/others)
+
 <!--
 Make Jelly site have a GitBook look!
 

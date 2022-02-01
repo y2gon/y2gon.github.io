@@ -9,22 +9,22 @@
             {% else %}
             <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}">
             {% endif %}
-              <!--  <a href="{{site.baseurl}}/">
-                     {{ site.title | escape }}
-                </a> -->
+                <a href="{{site.baseurl}}/">
+                     {{ "Main Contents"  | escape }}
+                </a>
             </li>
 
             <li class="divider"></li>
 
 
-            {% assign reversed_posts = site.posts | reverse %}
+            {% assign reversed_posts = site.others.posts | reverse %}
             {% for post in reversed_posts %}
                 {% if page.url == post.url %}
-                <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                <li class="chapter active" data-level="1.2" data-path="{https://y2gon.github.io/others{{post.url}}">
                 {% else %}
-                <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                <li class="chapter" data-level="1.1" data-path="{https://y2gon.github.io/others{{post.url}}">
                 {% endif %}
-                    <a href="{{site.baseurl}}{{post.url}}">
+                    <a href="{https://y2gon.github.io/others{{post.url}}">
                         {{ post.title  | escape }}
                     </a>
                     {% if site.toc.enabled %}
