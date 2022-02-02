@@ -8,7 +8,7 @@
             {% if page.url == "/index.html" or page.url == "/" %}
               <li class="chapter active" data-level="1.1" data-path="{{site.baseurl}}">
                 <a href="{{site.baseurl}}/">
-                  {{ "Main Contents" | escape }}
+                  {{ "MAIN CONTENTS" | escape }}
                 </a>
                 </li>
                 <li class="divider"></li>
@@ -23,13 +23,12 @@
                   </li>
                 {% endif %}
               {% endfor %}
-            <li class="divider"></li>
 
             <!-- 2. 현재 화면이 List 중 하나일때 -> root 항목 비활성화 -->
             {% else %}
               <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}">
                 <a href="{{site.baseurl}}/">
-                    {{ "Main Contents" | escape }}
+                    {{ "MAIN CONTENTS" | escape }}
                 </a>
               </li>
               <li class="divider"></li>
@@ -44,8 +43,29 @@
                     </a>
                     </li>
                     <li class="divider"></li>
+                    <li class="divider"></li>
                   {% endif %}
                   {% if post.category == "Rust from Scratch" %}
+                    <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                    <a href="{{site.baseurl}}{{post.url}}">
+                      {{ post.title | escape }}
+                    </a>
+                    </li>
+                  {% endif %}
+                {% endif %}
+
+
+                {% if page.url == "/list/generalknowledge.html" %}
+                  {% if post.url == "/list/generalknowledge.html"%}
+                    <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                    <a href="{{site.baseurl}}{{post.url}}">
+                        {{ post.title | escape }}
+                    </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="divider"></li>
+                  {% endif %}
+                  {% if post.category == "General Knowledge for Programming" %}
                     <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
                     <a href="{{site.baseurl}}{{post.url}}">
                       {{ post.title | escape }}
@@ -61,6 +81,7 @@
                         {{ post.title | escape }}
                     </a>
                     </li>
+                    <li class="divider"></li>
                     <li class="divider"></li>
                   {% endif %}
                   {% if post.category == "Toy Projects" %}
@@ -79,6 +100,7 @@
                     </a>
                     </li>
                     <li class="divider"></li>
+                    <li class="divider"></li>
                   {% endif %}
                   {% if post.category == "Problem Solving" %}
                     <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
@@ -96,6 +118,7 @@
                       {{ post.title | escape }}
                     </a>
                     </li>
+                    <li class="divider"></li>
                     <li class="divider"></li>
                   {% endif %}
                   {% if post.category == "Others" %}
@@ -116,6 +139,7 @@
                     </a>
                     </li>
                     <li class="divider"></li>
+                    <li class="divider"></li>
                   {% endif %}
                   {% if post.category == "Rust from Scratch" %}
                     {% if post.url == page.url %}
@@ -135,7 +159,38 @@
                         {{ post.title | escape }}
                       </a>
                       </li>
-                      <li class="divider"></li>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+
+                {% if page.category == "General Knowledge for Programming" %}
+                  {% if post.url == "/list/generalknowledge.html"%}
+                    <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                    <a href="{{site.baseurl}}{{post.url}}">
+                      {{ post.title | escape }}
+                    </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="divider"></li>
+                  {% endif %}
+                  {% if post.category == "General Knowledge for Programming" %}
+                    {% if post.url == page.url %}
+                      <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                      <a href="{{site.baseurl}}{{post.url}}">
+                        {{ post.title | escape }}
+                      </a>
+                      </li>
+                      {% if site.toc.enabled %}
+                        {% if page.url == post.url %}
+                          {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
+                        {% endif %}
+                      {% endif %}
+                    {% else %}
+                      <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                      <a href="{{site.baseurl}}{{post.url}}">
+                        {{ post.title | escape }}
+                      </a>
+                      </li>
                     {% endif %}
                   {% endif %}
                 {% endif %}
@@ -147,6 +202,7 @@
                       {{ post.title | escape }}
                     </a>
                     </li>
+                    <li class="divider"></li>
                     <li class="divider"></li>
                   {% endif %}
                   {% if post.category == "Toy Projects" %}
@@ -167,7 +223,6 @@
                         {{ post.title | escape }}
                       </a>
                       </li>
-                      <li class="divider"></li>
                     {% endif %}
                   {% endif %}
                 {% endif %}
@@ -179,6 +234,7 @@
                       {{ post.title | escape }}
                     </a>
                     </li>
+                    <li class="divider"></li>
                     <li class="divider"></li>
                   {% endif %}
                   {% if post.category == "Problem Solving" %}
@@ -199,7 +255,6 @@
                         {{ post.title | escape }}
                       </a>
                       </li>
-                      <li class="divider"></li>
                     {% endif %}
                   {% endif %}
                 {% endif %}
@@ -211,6 +266,7 @@
                       {{ post.title | escape }}
                     </a>
                     </li>
+                    <li class="divider"></li>
                     <li class="divider"></li>
                   {% endif %}
                   {% if post.category == "Others" %}
@@ -231,7 +287,6 @@
                         {{ post.title | escape }}
                       </a>
                       </li>
-                      <li class="divider"></li>
                     {% endif %}
                   {% endif %}
                 {% endif %}
