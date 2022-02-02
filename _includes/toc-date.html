@@ -16,24 +16,24 @@
 
             <li class="divider"></li>
 
-
-            {% assign reversed_posts = site.others.posts | reverse %}
-            {% for post in reversed_posts %}
-                {% if page.url == post.url %}
-                <li class="chapter active" data-level="1.2" data-path="{https://y2gon.github.io/others{{post.url}}">
-                {% else %}
-                <li class="chapter" data-level="1.1" data-path="{https://y2gon.github.io/others{{post.url}}">
-                {% endif %}
-                    <a href="{https://y2gon.github.io/others{{post.url}}">
-                        {{ post.title  | escape }}
-                    </a>
-                    {% if site.toc.enabled %}
-                        {% if page.url == post.url %}
-                            {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
-                        {% endif %}
-                    {% endif %}
-                </li>
-            {% endfor %}
+            {% if page.url == "/index.html" or page.url == "/" or page.url == "list/" %}
+              {% assign reversed_posts = site.list.posts | reverse %}
+              {% for post in reversed_posts %}
+                  {% if page.url == post.url %}
+                  <li class="chapter active" data-level="1.2" data-path="{https://y2gon.github.io/list{{post.url}}">
+                  {% else %}
+                  <li class="chapter" data-level="1.1" data-path="{https://y2gon.github.io/list{{post.url}}">
+                  {% endif %}
+                      <a href="{https://y2gon.github.io/list{{post.url}}">
+                          {{ post.title  | escape }}
+                      </a>
+                      {% if site.toc.enabled %}
+                          {% if page.url == post.url %}
+                              {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
+                          {% endif %}
+                      {% endif %}
+                  </li>
+              {% endfor %}
             <!--
             <li class="divider"></li>
 
