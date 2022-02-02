@@ -1,6 +1,6 @@
 ---
-title: 02toyprojects
-date: 0001-02-02
+title: Toy Projects
+date: 2000-02-02
 category: List
 layout: post
 ---

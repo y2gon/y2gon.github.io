@@ -1,6 +1,6 @@
 ---
-title: 03problemsolving
-date: 0001-03-03
+title: Problem Solving
+date: 2000-03-03
 category: List
 layout: post
 ---

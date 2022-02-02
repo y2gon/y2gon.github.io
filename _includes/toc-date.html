@@ -4,45 +4,240 @@
     </div>
     <nav role="navigation">
         <ul class="summary">
+          <!-- 1. 현재 화면이 root / index 화면에 있을 때 : index 와 카테고리 리스트만 보여줌  -->
             {% if page.url == "/index.html" or page.url == "/" %}
-            <li class="chapter active" data-level="1.1" data-path="{{site.baseurl}}">
-            {% else %}
-            <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}">
-            {% endif %}
+              <li class="chapter active" data-level="1.1" data-path="{{site.baseurl}}">
                 <a href="{{site.baseurl}}/">
-                     {{ "Main Contents"  | escape }}
+                  {{ "Main Contents" | escape }}
                 </a>
-            </li>
+                </li>
+                <li class="divider"></li>
 
-            <li class="divider"></li>
-
-            {% if page.url == "/index.html" or page.url == "/" or page.url == "list/" %}
-              {% assign reversed_posts = site.list.posts | reverse %}
+              {% assign reversed_posts = site.posts | reverse %}
               {% for post in reversed_posts %}
-                  {% if page.url == post.url %}
-                  <li class="chapter active" data-level="1.2" data-path="{https://y2gon.github.io/list{{post.url}}">
-                  {% else %}
-                  <li class="chapter" data-level="1.1" data-path="{https://y2gon.github.io/list{{post.url}}">
-                  {% endif %}
-                      <a href="{https://y2gon.github.io/list{{post.url}}">
-                          {{ post.title  | escape }}
-                      </a>
-                      {% if site.toc.enabled %}
-                          {% if page.url == post.url %}
-                              {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
-                          {% endif %}
-                      {% endif %}
+                {% if post.category == "List" %}
+                  <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                  <a href="{{site.baseurl}}{{post.url}}">
+                    {{ post.title | escape }}
+                  </a>
                   </li>
+                {% endif %}
               {% endfor %}
-            <!--
             <li class="divider"></li>
 
-            <li>
-                <a href="https://github.com/sighingnow/jekyll-gitbook/fork" target="blank" class="gitbook-link">
-                    Fork it Now!
+            <!-- 2. 현재 화면이 List 중 하나일때 -> root 항목 비활성화 -->
+            {% else %}
+              <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}">
+                <a href="{{site.baseurl}}/">
+                    {{ "Main Contents" | escape }}
                 </a>
-            </li>
-            -->
+              </li>
+              <li class="divider"></li>
+              <!-- 2.1 현재 화면이 List 중 하나일때 -> 해당 list 항목 활성화 및 세부 리스트 비활설화로 표시 -->
+              {% assign reversed_posts = site.posts | reverse %}
+              {% for post in reversed_posts %}
+                {% if page.url == "/list/rustfromscratch.html" %}
+                  {% if post.url == "/list/rustfromscratch.html"%}
+                    <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                    <a href="{{site.baseurl}}{{post.url}}">
+                        {{ post.title | escape }}
+                    </a>
+                    </li>
+                    <li class="divider"></li>
+                  {% endif %}
+                  {% if post.category == "Rust from Scratch" %}
+                    <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                    <a href="{{site.baseurl}}{{post.url}}">
+                      {{ post.title | escape }}
+                    </a>
+                    </li>
+                  {% endif %}
+                {% endif %}
+
+                {% if page.url == "/list/toyprojects.html" %}
+                  {% if post.url == "/list/toyprojects.html"%}
+                    <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                    <a href="{{site.baseurl}}{{post.url}}">
+                        {{ post.title | escape }}
+                    </a>
+                    </li>
+                    <li class="divider"></li>
+                  {% endif %}
+                  {% if post.category == "Toy Projects" %}
+                    <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                      <a href="{{site.baseurl}}{{post.url}}">
+                        {{ post.title | escape }}
+                      </a>
+                  {% endif %}
+                {% endif %}
+
+                {% if page.url == "/list/problemsolving.html" %}
+                  {% if post.url == "/list/problemsolving.html"%}
+                    <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                    <a href="{{site.baseurl}}{{post.url}}">
+                        {{ post.title | escape }}
+                    </a>
+                    </li>
+                    <li class="divider"></li>
+                  {% endif %}
+                  {% if post.category == "Problem Solving" %}
+                    <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                    <a href="{{site.baseurl}}{{post.url}}">
+                      {{ post.title | escape }}
+                    </a>
+                    </li>
+                  {% endif %}
+                {% endif %}
+
+                {% if page.url == "/list/others.html" %}
+                  {% if post.url == "/list/others.html"%}
+                    <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                    <a href="{{site.baseurl}}{{post.url}}">
+                      {{ post.title | escape }}
+                    </a>
+                    </li>
+                    <li class="divider"></li>
+                  {% endif %}
+                  {% if post.category == "Others" %}
+                    <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                    <a href="{{site.baseurl}}{{post.url}}">
+                      {{ post.title | escape }}
+                    </a>
+                    </li>
+                  {% endif %}
+                {% endif %}
+
+                <!-- 3. 현재 페이지가 세부 항목 중 하나 일 때 : List 항목 비활성화, 세부항목 활성화 및 toc 활성화-->
+                {% if page.category == "Rust from Scratch" %}
+                  {% if post.url == "/list/rustfromscratch.html"%}
+                    <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                    <a href="{{site.baseurl}}{{post.url}}">
+                      {{ post.title | escape }}
+                    </a>
+                    </li>
+                    <li class="divider"></li>
+                  {% endif %}
+                  {% if post.category == "Rust from Scratch" %}
+                    {% if post.url == page.url %}
+                      <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                      <a href="{{site.baseurl}}{{post.url}}">
+                        {{ post.title | escape }}
+                      </a>
+                      </li>
+                      {% if site.toc.enabled %}
+                        {% if page.url == post.url %}
+                          {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
+                        {% endif %}
+                      {% endif %}
+                    {% else %}
+                      <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                      <a href="{{site.baseurl}}{{post.url}}">
+                        {{ post.title | escape }}
+                      </a>
+                      </li>
+                      <li class="divider"></li>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+
+                {% if page.category == "Toy Projects" %}
+                  {% if post.url == "/list/toyprojects.html"%}
+                    <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                    <a href="{{site.baseurl}}{{post.url}}">
+                      {{ post.title | escape }}
+                    </a>
+                    </li>
+                    <li class="divider"></li>
+                  {% endif %}
+                  {% if post.category == "Toy Projects" %}
+                    {% if post.url == page.url %}
+                      <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                      <a href="{{site.baseurl}}{{post.url}}">
+                        {{ post.title | escape }}
+                      </a>
+                      </li>
+                      {% if site.toc.enabled %}
+                        {% if page.url == post.url %}
+                          {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
+                        {% endif %}
+                      {% endif %}
+                    {% else %}
+                      <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                      <a href="{{site.baseurl}}{{post.url}}">
+                        {{ post.title | escape }}
+                      </a>
+                      </li>
+                      <li class="divider"></li>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+
+                {% if page.category == "Problem Solving" %}
+                  {% if post.url == "/list/problemsolving.html"%}
+                    <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                    <a href="{{site.baseurl}}{{post.url}}">
+                      {{ post.title | escape }}
+                    </a>
+                    </li>
+                    <li class="divider"></li>
+                  {% endif %}
+                  {% if post.category == "Problem Solving" %}
+                    {% if post.url == page.url %}
+                      <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                      <a href="{{site.baseurl}}{{post.url}}">
+                        {{ post.title | escape }}
+                      </a>
+                      </li>
+                      {% if site.toc.enabled %}
+                        {% if page.url == post.url %}
+                          {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
+                        {% endif %}
+                      {% endif %}
+                    {% else %}
+                      <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                      <a href="{{site.baseurl}}{{post.url}}">
+                        {{ post.title | escape }}
+                      </a>
+                      </li>
+                      <li class="divider"></li>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+
+                {% if page.category == "Others" %}
+                  {% if post.url == "/list/others.html"%}
+                    <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                    <a href="{{site.baseurl}}{{post.url}}">
+                      {{ post.title | escape }}
+                    </a>
+                    </li>
+                    <li class="divider"></li>
+                  {% endif %}
+                  {% if post.category == "Others" %}
+                    {% if post.url == page.url %}
+                      <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                      <a href="{{site.baseurl}}{{post.url}}">
+                        {{ post.title | escape }}
+                      </a>
+                      </li>
+                      {% if site.toc.enabled %}
+                        {% if page.url == post.url %}
+                          {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
+                        {% endif %}
+                      {% endif %}
+                    {% else %}
+                      <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                      <a href="{{site.baseurl}}{{post.url}}">
+                        {{ post.title | escape }}
+                      </a>
+                      </li>
+                      <li class="divider"></li>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+
         </ul>
     </nav>
 </div>
