@@ -1,8 +1,8 @@
 ---
-title: 알고리즘 STEP 1 Stack/Queue 1 주식 가격
+title: (프로그래머스) 주식 가격
 date: 2021-09-28
 category: Problem Solving
-tags : [Algorithm, Stack]
+tags : [Algorithm, Stack, 프로그래머스]
 layout: post
 ---
 

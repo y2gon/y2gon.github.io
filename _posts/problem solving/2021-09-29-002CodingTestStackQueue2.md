@@ -1,8 +1,8 @@
 ---
-title: 알고리즘 STEP 1 Stack/Queue 2 기능개발
+title: (프로그래머스) 기능개발
 date: 2021-09-29
 category: Problem Solving
-tags : [Algorithm, Stack, Queue]
+tags : [Algorithm, Stack, Queue, 프로그래머스]
 layout: post
 ---
 

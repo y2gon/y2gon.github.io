@@ -1,8 +1,8 @@
 ---
-title: 알고리즘 STEP 2 완전탐색/이분탐색 2 소수 찾기
+title: (프로그래머스) 소수 찾기
 date: 2021-10-03
 category: Problem Solving
-tags : [Algorithm, ExhuasiveSearch]
+tags : [Algorithm, ExhuasiveSearch, 프로그래머스, 완전탐색]
 layout: post
 ---
 

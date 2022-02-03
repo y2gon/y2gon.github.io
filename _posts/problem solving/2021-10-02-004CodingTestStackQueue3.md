@@ -1,8 +1,8 @@
 ---
-title: 알고리즘 STEP 1 Stack/Queue 3 다리를 지나는 트럭
+title: (프로그래머스) 다리를 지나는 트럭
 date: 2021-10-02
 category: Problem Solving
-tags : [Algorithm, Stack, Deque]
+tags : [Algorithm, Stack, Deque, 프로그래머스]
 layout: post
 ---
 

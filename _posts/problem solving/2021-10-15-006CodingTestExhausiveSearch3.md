@@ -1,8 +1,8 @@
 ---
-title: 알고리즘 STEP 2 완전탐색/이분탐색 3 숫자카드2
+title: (프로그래머스) 숫자카드2
 date: 2021-10-15
 category: Problem Solving
-tags : [Algorithm]
+tags : [Algorithm, 프로그래머스, 이분탐색]
 layout: post
 ---
 * 링크: [코딩테스트 연습>이분탐색>숫자카드2](https://www.acmicpc.net/problem/10816)

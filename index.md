@@ -2,21 +2,21 @@
 layout: home
 ---
 
-## [Rust from Scratch]({{site.baseurl}}/list/rustfromscratch.html)
+### [Rust from Scratch]({{site.baseurl}}/list/rustfromscratch.html)
 - Rust 기초 및 관련 학습 내용
 
-## [General Knowledge for Programming]({{site.baseurl}}/list/generalknowledge.html)
+### [General Knowledge for Programming]({{site.baseurl}}/list/generalknowledge.html)
 - 프로그래밍 학습과정에서 추가로 학습한 배경 지식
 
-## [Toy Projects]({{site.baseurl}}/list/toyprojects.html)
+### [Toy Projects]({{site.baseurl}}/list/toyprojects.html)
 - Rust 를 사용하여 작성한 Toy projects
 
 
-## [Problem Solving]({{site.baseurl}}/list/problemsolving.html)
+### [Problem Solving]({{site.baseurl}}/list/problemsolving.html)
 - 주로 파이썬을 사용하여 작성된 Coding Test 문제들
 
 
-## [Others]({{site.baseurl}}/list/others.html)
+### [Others]({{site.baseurl}}/list/others.html)
 
 <!--
 Make Jelly site have a GitBook look!

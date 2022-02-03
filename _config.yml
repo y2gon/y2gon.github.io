@@ -30,7 +30,7 @@ kramdown:
   syntax_highlighter_opts:
     guess_lang:           true
 
-syntax_highlighter_style: 
+syntax_highlighter_style:
 
 markdown_ext:     markdown,mkdown,mkdn,mkd,md
 

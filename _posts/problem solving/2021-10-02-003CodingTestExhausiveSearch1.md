@@ -1,9 +1,9 @@
 ---
-title: 알고리즘 STEP 2 완전탐색/이분탐색 1 모의 고사
+title: (프로그래머스)모의 고사
 date: 2021-10-02
 category: Problem Solving
-tags : [Algorithm, Stack, ExhuasiveSearch]
-layout: post 
+tags : [Algorithm, Stack, ExhuasiveSearch, 프로그래머스, 완전탐색]
+layout: post
 ---
 
 * 링크: [코딩테스트 연습>완전탐색>모의고사](https://programmers.co.kr/learn/courses/30/lessons/42840)
