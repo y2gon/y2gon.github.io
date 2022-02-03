@@ -5,11 +5,16 @@ category: List
 layout: post
 ---
 
+### 개념 정리
 
-#### [Rust from Scratch]({{site.baseurl}}/list/rustfromscratch.html)
+#### [(Rust) string literal(&str)]({{site.baseurl}}/rust from scratch/001stringstringliteral.html)
 
-#### [Toy Projects]({{site.baseurl}}/list/toyprojects.html)
+#### []({{site.baseurl}}/rust form scratch/cookbook01.html)
 
-#### [Problem Solving]({{site.baseurl}}/list/problemsolving.html)
+#### []({{site.baseurl}}/rust form scratch/cookbook01.html)
 
-#### [Others]({{site.baseurl}}/list/others.html)
+#### []({{site.baseurl}}/rust form scratch/cookbook01.html)
+
+#### []({{site.baseurl}}/rust form scratch/cookbook01.html)
+
+#### []({{site.baseurl}}/rust form scratch/cookbook01.html)

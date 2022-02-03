@@ -45,7 +45,7 @@ layout: post
 
 
 ### Code
-```python
+~~~python
 def solution(prices):
     answer = []
     priceStack = [(0, prices[0])] # 입력된 배열값의 첫 값을 대입
@@ -81,7 +81,7 @@ def solution(prices):
         answer.append(count)                        # value 를 list 에 순서대로 저장
 
     return answer                                   # list 를 return 값으로 보냄
-```
+~~~
 해당 함수 실행 시,
 
 ```python
