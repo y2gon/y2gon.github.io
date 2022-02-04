@@ -5,9 +5,6 @@ category: Rust from Scratch
 tags : [rust, concatenating, string]
 layout: post
 ---
-####### Rust 를 공부하면서 정리하는 목적으로 작성된 POST 입니다. 이해가 부족하여 잘못 서술된 내용이 있을 수 있습니다.
-
-
 
 Rust 를 배우면서 여러가지로 개념과 사용법을 배우는 것이 어려웠는데, 그중 하나는 문자열 처리 였다. 특히 파이썬과 비교하면...
 
@@ -42,10 +39,10 @@ xyz123
 내용도, 길이도 변경이 가능하다. 이건 또다른 질문을 불러온다.
 
 ### 2.string literal 의 길이가 변경 가능 하다면, stack 에 저장되는가? heap 에 저장되는가?
--------------
+
 찾아본 내용에 의하면, 둘 다 아니다.
 
->[String literals are not stored in the heap or the stack, they are stored directly in your program’s binary. Literally embedded in the binary, and the reference is a reference to the location in the binary.](https://users.rust-lang.org/t/str-string-literals/29635)
+>String literals are not stored in the heap or the stack, they are stored directly in your program’s binary. Literally embedded in the binary, and the reference is a reference to the location in the binary. [(링크)](https://users.rust-lang.org/t/str-string-literals/29635)
 
 string literal 의 경우, program memory 에 bytes 형태로 저장되어 있으며, 이를 변수로 선언했을 때, 해당 변수는 해당 memory 의 주소를 가져오게 된다.
 
