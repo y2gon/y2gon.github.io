@@ -2,16 +2,13 @@
 title: (프로그래머스) 소수 찾기
 date: 2021-10-03
 category: Problem Solving
-tags : [Algorithm, ExhuasiveSearch, 프로그래머스, 완전탐색]
+tags : [Algorithm, ExhuasiveSearch, 프로그래머스, 완전탐색, 소수 찾기]
 layout: post
 ---
 
 * 링크: [코딩테스트 연습>완전탐색>소수 찾기](https://programmers.co.kr/learn/courses/30/lessons/42839)
 
->### 소수 찾기
-
-
->#### 문제 설명
+>### 문제 설명
 >
 >한자리 숫자가 적힌 종이 조각이 흩어져있습니다. 흩어진 종이 조각을 붙여 소수를 몇 개 만들 수 있는지 알아내려 합니다.
 >
@@ -38,7 +35,7 @@ layout: post
 > * 11과 011은 같은 숫자로 취급합니다.
 
 
-### 1차 시도 Code
+### 1차 시도 CODE (일부 성공)
 ```python
 def solution(numStr):
     numbers = []
@@ -130,7 +127,7 @@ def solution(numStr):
 
 ```
 
-### Error Comments (1st)
+#### 1차 Error Comments
 
   * test 결과 : 12개 test 중 5개 통과/ 5개 런타임 에러/ 2 개 시간초과
 
@@ -153,7 +150,7 @@ print(list(map(''.join, permutations(items, 2)))) # 2개의 원소를 가지고 
 
   * permutations 를 사용하여 해당 부분을 개선함.
 
-### 2차 시도 Code
+### 2차 시도 CODE (일부 성공)
 ```python
 def solution11(numStr):
     from itertools import permutations
@@ -190,14 +187,14 @@ def solution11(numStr):
 
     return counter
 ```
-### Error Comments (2nd)
+#### 2차 Error Comments
 
   * code 는 매우 간략해졌지만, 실제 Test 에서는 5개 통과  / 7개 시간 초과 의 결과를 얻음 (런타임 오류는 없어짐.)
 
 
   * 따라서 시간 단축을 이루기 위해서는 다른 부분에서의 정리가 필요해 보임.
 
-### 3차 시도 Code
+### 3차 시도 CODE (일부 성공)
 ```python
 def solution3(numStr):
     from itertools import permutations
@@ -229,14 +226,14 @@ def solution3(numStr):
     return len(nums_set.intersection(prime_nums))
 
 ```
-### Error Comments (3rd)
+#### 3 Error Comments (3rd)
 
   * dictionary -> set 으로 변경하였으나 역시 속도에 큰 변화는 없음.
 
 
   * 결국 소수를 찾아 비교하는 부분에 대한 완전한 변경이 필요해 보임.
 
-### 4차 시도 Code
+### 4차 시도 CODE (성공)
 ```python
 def solution(numStr):
     from itertools import permutations
@@ -268,7 +265,7 @@ def solution(numStr):
     #print("2: ",result) # 오류 확인용
     return len(result)
 ```
-### Error Comments (4th)
+#### 4차 Error Comments
 
   * 최종 Test 통과 최대 소요 시간 : 29.33ms
 

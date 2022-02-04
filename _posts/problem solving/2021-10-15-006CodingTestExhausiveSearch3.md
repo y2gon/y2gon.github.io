@@ -2,7 +2,7 @@
 title: (프로그래머스) 숫자카드2
 date: 2021-10-15
 category: Problem Solving
-tags : [Algorithm, 프로그래머스, 이분탐색]
+tags : [Algorithm, 프로그래머스, 이분탐색, 숫자카드2]
 layout: post
 ---
 * 링크: [코딩테스트 연습>이분탐색>숫자카드2](https://www.acmicpc.net/problem/10816)
@@ -28,7 +28,7 @@ layout: post
 >3 0 0 1 2 0 0 2
 
 
-### CODE (1)
+### 1차 시도 CODE (시간초과)
 ```python
 from sys import stdin
 ownedNum = stdin.readline()
@@ -80,7 +80,7 @@ for x in stdCardList:
 print(answer)
 ```
 
-### Error Comments
+#### Error Comments
 
   * 이진 탐색을 사용하여 기본 알고리즘 구성
 
@@ -99,7 +99,7 @@ print(answer)
     - 결정적으로 Test 시 시간 초과가 발생. (해당 개념으로 더이상 처리 시간을 줄일 수 있는 방법을 찾지 못함.)
 
 
-### CODE (2차)
+### 2차 CODE (성공)
 ```python
 from sys import stdin
 ownedNum = 10
@@ -128,7 +128,7 @@ answer= answer[:-2]
 print(answer)
 ```
 
-### Error Comments
+#### Error Comments
   * 이진 탐색으로 적절한 방법을 찾을 수 없어서, dictionary 기능을 사용하여 기능을 구현함.
 
 

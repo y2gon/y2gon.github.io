@@ -5,7 +5,7 @@ category: Rust from Scratch
 tags : [rust, concatenating, string]
 layout: post
 ---
-###### Rust 를 공부하면서 정리하는 목적으로 작성된 POST 입니다. 이해가 부족하여 잘못 서술된 내용이 있을 수 있습니다.
+####### Rust 를 공부하면서 정리하는 목적으로 작성된 POST 입니다. 이해가 부족하여 잘못 서술된 내용이 있을 수 있습니다.
 
 
 
@@ -22,8 +22,8 @@ mutable 로 선언된 문자열의 경우, 그 길이를 고정시킬 수 없으
 
 그렇다면, 길이가 고정된 string literal 에 대해 몇가지 질문이 생긴다.
 
-1.string literal 은 mutable 선언 및 사용이 불가능 한가?
--------------
+### 1.string literal 은 mutable 선언 및 사용이 불가능 한가?
+
 다음과 같이, mutable 로 사용 가능하다.  
 
 ```rust
@@ -41,7 +41,7 @@ xyz123
 ```
 내용도, 길이도 변경이 가능하다. 이건 또다른 질문을 불러온다.
 
-2.string literal 의 길이가 변경 가능 하다면, stack 에 저장되는가? heap 에 저장되는가?
+### 2.string literal 의 길이가 변경 가능 하다면, stack 에 저장되는가? heap 에 저장되는가?
 -------------
 찾아본 내용에 의하면, 둘 다 아니다.
 
@@ -102,8 +102,8 @@ Address of new (helloworld) = 0x7ff78941d370
  - 위 code 를 통해서 string literal 변수를 선언했을 때, 해당 변수는 해당 값을 그대로 가지고 있는 것이 아니라, pointer 로 작동하고 있음을 알 수 있다. 따라서, mutable 로 선언 후, 해당 문자열을 변경이 가능해진다.
  - 다만 위 과정을 통해서 string literal 자체가 어디에 저장되는지는 확인할 수 없다. 이를 간접적으로 확인해볼 수 있는 방법은 string literal 의 lifetime 을 살펴 보는 것이다.  
 
-3.string literal 의 lifetime
--------------
+### 3.string literal 의 lifetime
+
 
 
 ```Rust

@@ -2,16 +2,13 @@
 title: (프로그래머스) 기능개발
 date: 2021-09-29
 category: Problem Solving
-tags : [Algorithm, Stack, Queue, 프로그래머스]
+tags : [Algorithm, Stack, Queue, 프로그래머스, 기능개발]
 layout: post
 ---
 
 * 링크: [코딩테스트 연습>스택/큐>기능개발](https://programmers.co.kr/learn/courses/30/lessons/42586)
 
->### 기능개발
-
-
->#### 문제 설명
+>### 문제 설명
 >
 >프로그래머스 팀에서는 기능 개선 작업을 수행 중입니다. 각 기능은 진도가 100%일 때 서비스에 반영할 수 있습니다.
 >
@@ -50,7 +47,7 @@ layout: post
 >
 >따라서 7일째에 2개의 기능, 9일째에 1개의 기능이 배포됩니다.
 
-### Code
+### 1차 CODE
 ```python
 def solution(progresses, speeds):
     answer = []
@@ -79,7 +76,7 @@ solution([95, 90, 99, 99, 80, 99],[1, 1, 1, 1, 1, 1])
 ```
 `[1, 3, 2]`
 
-### Error Comments
+#### Error Comments
 
 * 초반에는 이전 문제와 같이 각각의 주어진 배열을 dictionary 넣고, progress 가 100 이상이 된 값들을 stack 에 저장하고자 하였으나, 이 방법으로는 답을 찾을 수 없었음.
 
@@ -90,7 +87,7 @@ solution([95, 90, 99, 99, 80, 99],[1, 1, 1, 1, 1, 1])
 
   - len(progresses) > 0 조건을 추가하여 해당 error 해결
 
-### 2차 풀이
+### 2차 CODE
 ```python
 def solution(progresses, speeds):
     days = 1
@@ -108,15 +105,14 @@ def solution(progresses, speeds):
     return answer
 ```
 
-### Error Comments
+#### Error Comments
 
 *  다시 문제를 보니 매일 progresses 값들에 굳이 값을 올려줄 필요가 없었다.
 
 
 *  날짜수를 반복문을 통해 오려주면서, progresses[0] 값만 변경해서 100 을 넘는지 확인하고, True 일 경우 , pop 으로 꺼내서 다시 progresses[0] 의 값을 확인하는 반복문을 통해 이전보다 간단하게 풀이가 가능했음.
 
-### 다른 사람 풀이 보기
-
+### 다른 사람 풀이 
 ```python
 def solution(progresses, speeds):
 Q=[]

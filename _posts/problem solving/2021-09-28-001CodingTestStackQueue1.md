@@ -2,17 +2,14 @@
 title: (프로그래머스) 주식 가격
 date: 2021-09-28
 category: Problem Solving
-tags : [Algorithm, Stack, 프로그래머스]
+tags : [Algorithm, Stack, 프로그래머스, 주식가격]
 layout: post
 ---
 
 
 * 링크 : [코딩테스트 연습>스택/큐>주식가격](https://programmers.co.kr/learn/courses/30/lessons/42584)
 
->### 주식가격
-
-
->#### 문제 설명
+>### 문제 설명
 >
 >초 단위로 기록된 주식가격이 담긴 배열 prices가 매개변수로 주어질 때, 가격이 떨어지지 않은 기간은 몇 초인지를 return 하도록 solution 함수를 완성하세요.
 
@@ -44,7 +41,7 @@ layout: post
 >※ 공지 - 2019년 2월 28일 지문이 리뉴얼되었습니다.
 
 
-### Code
+### CODE
 ~~~python
 def solution(prices):
     answer = []
@@ -89,7 +86,7 @@ solution([50, 10, 20, 30, 20, 30])
 ```
 `[1, 4, 3, 1, 1, 0]`
 
-### Error Comments
+#### Error Comments
 
 * 논리구조를 파악하기 가장 어려웠던 부분은 else 문(기준값이 비교값보다 커져서 stack 에서 값을 꺼내야 할 경우) 였음.
 
@@ -130,9 +127,7 @@ solution([50, 10, 20, 30, 20, 30])
   - 최종 stack 에서 꺼낸값을 정렬할 때 반복문을 쓰지 않고자 dictionary 를 사용했으나, 정렬된 dictionary 값이 tuple 로 나오는데 이를 list 로 변환하는 최적의 방법을 찾지 못해 결국 반복문을 다시 썼음.
 
 
-  ## 다시 풀기
-
-  ### Code
+  ### 수정 CODE
   ```python
   def solution(price):
 
@@ -153,7 +148,7 @@ solution([50, 10, 20, 30, 20, 30])
 
     return answer
   ```
-  ### Error Comments
+  #### Error Comments
 
 * 기존에 각 배열의 값을 다음 값과 비교하면서 문제를 풀도록 작성된 code 의 경우, 이해하기 어려우며 , 주식 등락에 대한 경우의 수를 분기하여 이에 대한 각각의 code 를 작성해야 했기 때문에 문제가 있었다.
 

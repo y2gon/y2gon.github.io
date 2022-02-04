@@ -2,16 +2,13 @@
 title: (프로그래머스) 다리를 지나는 트럭
 date: 2021-10-02
 category: Problem Solving
-tags : [Algorithm, Stack, Deque, 프로그래머스]
+tags : [Algorithm, Stack, Deque, 프로그래머스, 다리를 지나는 트럭]
 layout: post
 ---
 
 * 링크: [코딩테스트 연습>스택/큐>다리를 지나는 트럭](https://programmers.co.kr/learn/courses/30/lessons/42583)
 
->### 다리를 지나는 트럭
-
-
->#### 문제 설명
+>### 문제 설명
 >
 >트럭 여러 대가 강을 가로지르는 일차선 다리를 정해진 순으로 건너려 합니다. 모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 알아내야 합니다.
 >다리에는 트럭이 최대 bridge_length대 올라갈 수 있으며, 다리는 weight 이하까지의 무게를 견딜 수 있습니다.
@@ -48,7 +45,7 @@ layout: post
 |100|	100|	[10,10,10,10,10,10,10,10,10,10]|	110|
 
 
-### Code1 (최장 9781.72ms 소요, 그러나 재시도 시, 시간초과로 실패 )
+### 1차 시도 CODE (최장 9781.72ms 소요, 그러나 재시도 시, 시간초과로 실패 )
 ```python
 def solution(bridge_length, weight, truck_weights):
     counter=0
@@ -82,7 +79,7 @@ def solution(bridge_length, weight, truck_weights):
 ```
 
 
-### Code2 (최장소요시간:  0.87ms)
+### 2차 시도 CODE (최장소요시간:  0.87ms)
 ```python
 def solution(bridge_length, weight, truck_weights):
     import collections
@@ -128,9 +125,9 @@ def solution(bridge_length, weight, truck_weights):
     return tTime
 ```
 
-### Error Comments
+#### Error Comments
 
-#### code1 문제점 고찰
+#### 1차 2차 시도 CODE 문제점 고찰
   * code1 의 전체적 구성은 list 형태로 다리위에 순서대로 차량을 올리고 만약 허용 중량을 넘기는 것이 예상될때는 해당 list 에 0을 채워서 가면, 해당 process 가 진행될 때마다 counter 가 1씩 증가하여 소요되는 시간을 산출하는 방식임.
 
 
@@ -195,7 +192,7 @@ def solution(bridge_length, weight, truck_weights):
       - 초기 풀이 방법을 수정하고자 할 때, 다리 길이를 가진 배열의 초기화에 `bridge = collections.deque([0]*bridge_length)` 로 활용하였으나, 최종 code 에서는 필요없어짐.
       - pop / popleft , append / appendleft 와 배열의 양쪽에서 접근하여 값을 추가/인출 할 수 있음. (기존의 list 를 활용한 방법과 어떤차이가 있는지는 모르겠음. )
 
-### code 2차
+###  최종 CODE
 ```python
 def solution (bridge_length, weight, truck_weights):
    bridge = [0] * bridge_length
@@ -218,5 +215,5 @@ def solution (bridge_length, weight, truck_weights):
    return time
 ```
 
-### Error Comments
+#### Error Comments
   * 1차 시도에서 가장 문제가 됐었던, 5번 test 에 대한 시간 초과 이유는, 반복문에서 계속적으로 list 의 합을 구하는 과정이 생각보다 많은 proccess 를 요구하기 때문이였다. 해당 내용을 수정하니, 복잡한 경우의 수를 모두 배제 하고 시간 초과를 막을 수 있었다.  

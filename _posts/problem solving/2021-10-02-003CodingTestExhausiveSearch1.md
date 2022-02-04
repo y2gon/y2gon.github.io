@@ -2,16 +2,13 @@
 title: (프로그래머스)모의 고사
 date: 2021-10-02
 category: Problem Solving
-tags : [Algorithm, Stack, ExhuasiveSearch, 프로그래머스, 완전탐색]
+tags : [Algorithm, Stack, ExhuasiveSearch, 프로그래머스, 완전탐색, 모의고사]
 layout: post
 ---
 
 * 링크: [코딩테스트 연습>완전탐색>모의고사](https://programmers.co.kr/learn/courses/30/lessons/42840)
 
->### 모의고사
-
-
->#### 문제 설명
+>### 문제 설명
 >
 >수포자는 수학을 포기한 사람의 준말입니다. 수포자 삼인방은 모의고사에 수학 문제를 전부 찍으려 합니다. 수포자는 1번 문제부터 마지막 문제까지 다음과 같이 찍습니다.
 >
@@ -36,7 +33,7 @@ layout: post
 |[1,3,2,4,2]|	[1,2,3]|
 
 
-### Code
+### CODE
 ```python
 def solution(answer):
     def p1(idx, answ):
@@ -78,7 +75,7 @@ def solution(answer):
 
 ```
 
-### Error Comments
+#### Error Comments
 
   * 일전에 파이선 수업 시간에 풀었던 문제였으며, 상대적으로 알고리즘 자체는 복잡하지 않아 문제를 푸는데 큰 어려움은 없었음.
 
