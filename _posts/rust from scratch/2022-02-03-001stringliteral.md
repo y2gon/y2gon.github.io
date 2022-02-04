@@ -1,8 +1,8 @@
 ---
-title: (Rust) string literal(&str)
+title: string literal(&str)
 date: 2022-02-03
 category: Rust from Scratch
-tags : [rust, concatenating, string]
+tags : [rust, string literal, &str, String]
 layout: post
 ---
 
@@ -46,7 +46,7 @@ xyz123
 
 string literal 의 경우, program memory 에 bytes 형태로 저장되어 있으며, 이를 변수로 선언했을 때, 해당 변수는 해당 memory 의 주소를 가져오게 된다.
 
-위 두 질문에 대해 아래 code 를 통해 확인해 보자. [(아래 code 에 대한 링크)](https://users.rust-lang.org/t/why-am-i-able-to-mutate-a-string-literal/39778/16)
+위 두 질문에 대해 아래 code 를 통해 확인해 보자. [(아래 code 원문)](https://users.rust-lang.org/t/why-am-i-able-to-mutate-a-string-literal/39778/16)
 
 ```rust
 fn main()
