@@ -9,7 +9,7 @@ layout: post
 
 #### [string literal(&str)]({{site.baseurl}}/rust from scratch/001stringliteral.html)
 
-#### []({{site.baseurl}}/rust form scratch/cookbook01.html)
+#### [002]({{site.baseurl}}/rust form scratch/002storingdata.html)
 
 #### []({{site.baseurl}}/rust form scratch/cookbook01.html)
 
