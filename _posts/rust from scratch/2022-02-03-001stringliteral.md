@@ -322,7 +322,7 @@ to_string() 이 return 자료형을 String 형으로 변환하는데 특화된 m
 method 명이 원래 다른 목적으로 만들어졌음을 추측하게 만든다. 공식 문서를 우선 살펴 보면,
 
 > #### Trait std::borrow::ToOwned [(원문 링크)](https://doc.rust-lang.org/std/borrow/trait.ToOwned.html)
-
+>
 > fn to_owned(&self) -> Self::Owned
 > Creates owned data from borrowed data, usually by cloning.
 
