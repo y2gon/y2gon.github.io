@@ -313,13 +313,13 @@ fn main() {
 공식문서에 다음과 같이 언급되어 있다.
 
 >String::from과 .to_string은 정확히 똑같은 일을 하며, 따라서 어떤 것을 사용하는가는 여러분의 스타일에 따라 달린 문제입니다.
->스트링이 UTF-8로 인코딩되었음을 기억하세요. 즉, 아래의 Listing 8-14에서 보는 것처럼 우리는 인코딩된 어떤 데이터라도 포함시킬 수 있습니다: [원문 링크](https://rinthel.github.io/rust-lang-book-ko/ch08-02-strings.html)
+>스트링이 UTF-8로 인코딩되었음을 기억하세요. 즉, 아래의 Listing 8-14에서 보는 것처럼 우리는 인코딩된 어떤 데이터라도 포함시킬 수 있습니다: [(원문 링크)](https://rinthel.github.io/rust-lang-book-ko/ch08-02-strings.html)
 
 그러나 String::from() 을 사용한 경우, 문자열 타입일 때만 정상적으로 동작함을 볼수 있다.  이는 rust standard crate 문서를 보면 차이점을 이해 할 수 있다.
 
 to_string() 이 return 자료형을 String 형으로 변환하는데 특화된 method 라면, std::convert::From Trait 은 광의적으로 이미 작성된 implementors 에 명시된 모든 자료형을 변환할 수 있게 해주며, &str -> String (struct) 는 그 중 하나의 하나일 뿐이다.
 
-(해당 내용은 아직 이해가 부족하여 추가 학습이 필요함.) [(원문 링크)](https://doc.rust-lang.org/std/convert/trait.From.html#tymethod.from)
+(해당 내용은 아직 이해가 부족하여 추가 학습이 필요함.) [(공식 문서 링크)](https://doc.rust-lang.org/std/convert/trait.From.html#tymethod.from)
 
 #### 4.3 to_owned()
 method 명이 원래 다른 목적으로 만들어졌음을 추측하게 만든다. 공식 문서를 우선 살펴 보면,
@@ -357,7 +357,7 @@ clone() 과 기능이 비슷하지만, clone() 은 동일 자료형 (ex. &str ->
 
 #### 4.4 into()
 
-역시 공시문서를 확인하면 다음과 같이 명시되어 있다.
+역시 공식문서를 확인하면 다음과 같이 명시되어 있다.
 
 > #### Trait std::convert::Into
 > A value-to-value conversion that consumes the input value. The opposite of From. [(원문 링크)](https://doc.rust-lang.org/std/convert/trait.Into.html)
@@ -370,18 +370,17 @@ clone() 과 기능이 비슷하지만, clone() 은 동일 자료형 (ex. &str ->
 그리고 이렇게 해서 형변환이 가능한 이유는, std::convert::From Trait 에 &str -> String implementor 가 이미 정의 되어 있기 때문이다.
 
 From 에 impementing 된 자료형은 자동으로 Into 에도 implementor 가 생성된다고 명시되어 있다.
-따라서 into() 를 사용하여 동일 작업을 할 수 있으며, 사용 방법은
+따라서 into() 를 사용하여 동일 작업을 할 수 있으며, 사용 방법은 다음과 같다.
 
        let 변수:String = "문자열".into();
                   ㄴ> 명시적으로 지정해줘야 함.
 
 
 #### 4.5 결론
-일반적으로 string literal 을 포함, 일반 데이터를 String 으로 형변환을 하려면, to_string() 을 사용하는 것이 가장 무난해 보인다.
+* 일반적으로 string literal 을 포함, 일반 데이터를 String 으로 형변환을 하려면, to_string() 을 사용하는 것이 가장 무난해 보인다.
 
-From Trait 의 경우, 좀더 다양한 경우에 사용될 수 있다. (ex. i32 -> f64, char -> u32)
-특히 rust 는 자동 형변환이 허용되지 않으므로, 이를 잘 사용해야 하며, 사용자가 임의로 작성한 struct 에 대해서도 implementor 를 추가하여 사용할 수 있을 듯 하다.
+* From Trait 의 경우, 좀더 다양한 경우에 사용될 수 있다. (ex. i32 -> f64, char -> u32) 특히 rust 는 자동 형변환이 허용되지 않으므로, 이를 잘 사용해야 하며, 사용자가 임의로 작성한 struct 에 대해서도 implementor 를 추가하여 사용할 수 있을 듯 하다.
 
-to_owned() 의 경우, borrowed type 의 ownership 을 해결할 수 있으므로, struct member 로 사용할 자료형이 DST 인 경우, 활용할 수 있을 듯 하다.
+* to_owned() 의 경우, borrowed type 의 ownership 을 해결할 수 있으므로, struct member 로 사용할 자료형이 DST 인 경우, 활용할 수 있을 듯 하다.
 
-into() 의 경우, 아직 어떻게 활용할수 있을지, 잘 모르겠다. From 과 함께 추가로 학습이 필요해 보인다.
+* into() 의 경우, 아직 어떻게 활용할수 있을지, 잘 모르겠다. From 과 함께 추가로 학습이 필요해 보인다.
