@@ -61,7 +61,7 @@ fn main() {
 -----------------------------------------------------------------------
 ### 1.string literal 은 mutable 선언 및 사용이 불가능 한가?
 
-그렇제 않다. mutable 로 사용 가능하다.  
+그렇지 않다. mutable 로 사용 가능하다.  
 
 CODE 2
 ```rust
@@ -99,9 +99,9 @@ string literal 의 경우, program memory 에 저장되어 있으며, 변수는 
 
 
 
-이 내용을 다시 한번 증명하기 위해 다음 code 를 확인해 보자. [(code 원문 링크)](https://users.rust-lang.org/t/why-am-i-able-to-mutate-a-string-literal/39778/16)
+이 내용을 다시 한번 증명하기 위해 다음 code 를 확인해 보자.
 
-CODE 3
+CODE 3 [(code 원문 링크)](https://users.rust-lang.org/t/why-am-i-able-to-mutate-a-string-literal/39778/16)
 ```rust
 fn main()
 {
@@ -187,13 +187,14 @@ missing lifetime specifier
 expected named lifetime parameter
 ```
 구조체 멤버로 참조형은 쓸 수 없다. struct 가 사용되는 기간동안 original data 의 lifetime 을 보장할 수 없기 때문이다.
-stack 에 저장된 자료형(ex. i32, f64)의 경우는 값을 복사하여 가져올 수 있고, heap 영역에 저장된 자료형의 경우, ownership 을 가져오면 되므로 문제가 발생하지 않는다. 그러나 string literal 의 경우, 해당 자료형은 명시적으로(&) 참조형이며, heap 영역에 저장된 것도 아니므로, ownership 을 가져올 수도 없다.
+stack 에 저장된 자료형(ex. i32, f64)의 경우는 값을 복사하여 가져올 수 있고, heap 영역에 저장된 자료형의 경우, ownership 을 가져오면 되므로 자체적으로 해결할 수 있다. 그러나 string literal 의 경우, 해당 자료형은 명시적으로(&) 참조형이며, heap 영역에 저장된 것도 아니므로, ownership 을 가져올 수도 없다.
 
 이를 해결하는 방법은 크게 두가지로 생각 해볼 수 있다.
 
 #### 3.1 'static lifetime parameter 사용
 
 최초의 입력된 string literal 을 &'static str 로 선언해 주든지, 구조체에서 받을 때 &'static str 로 변환해서 받을 경우 해당 문제가 발생되지 않는다.
+
 CODE 5
 ```rust
 struct  Mate {
@@ -222,7 +223,7 @@ person2 : John
 ```
 
 
-이와 관련하여, 공식 문서에 다음과 같이 언급되어 있다. [(원문 링크)](https://rinthel.github.io/rust-lang-book-ko/ch10-03-lifetime-syntax.html)
+이와 관련하여, 공식 문서에 다음과 같이 언급되어 있다.
 
 >#### 정적 라이프타임(Static lifetime)
 우리가 논의할 필요가 있는 특별한 라이프타임이 딱 하나 있습니다: 바로 'static입니다. 'static 라이프타임은 프로그램의 전체 생애주기를 가리킵니다. 모든 스트링 리터럴은 'static 라이프타임을 가지고 있는데, 아래와 같이 명시하는 쪽을 선택할 수 있습니다:
@@ -231,7 +232,7 @@ let s: &'static str = "I have a static lifetime.";
 ```
 >이 스트링의 텍스트는 여러분의 프로그램의 바이너리 내에 직접 저장되며 여러분 프로그램의 바이너리는 항상 이용이 가능하지요. 따라서, 모든 스트링 리터럴의 라이프타임은 'static입니다.
 
-> 여러분은 어쩌면 에러 메시지 도움말에서 'static 라이프타임을 이용하라는 제안을 보셨을지도 모릅니다만, 참조자의 라이프타임으로서 'static으로 특정하기 전에, 여러분이 가지고 있는 참조자가 실제로 여러분 프로그램의 전체 라이프타임 동안 사는 것인지 대해 생각해보세요 (혹은 가능하다면 그렇게 오래 살게끔 하고 싶어 할지라도 말이죠). 대부분의 경우, 코드 내의 문제는 댕글링 참조자를 만드는 시도 혹은 사용 가능한 라이프타임들의 불일치이며, 해결책은 이 문제들을 해결하는 것이지 'static 라이프타임으로 특정하는 것이 아닙니다.
+> 여러분은 어쩌면 에러 메시지 도움말에서 'static 라이프타임을 이용하라는 제안을 보셨을지도 모릅니다만, 참조자의 라이프타임으로서 'static으로 특정하기 전에, 여러분이 가지고 있는 참조자가 실제로 여러분 프로그램의 전체 라이프타임 동안 사는 것인지 대해 생각해보세요 (혹은 가능하다면 그렇게 오래 살게끔 하고 싶어 할지라도 말이죠). 대부분의 경우, 코드 내의 문제는 댕글링 참조자를 만드는 시도 혹은 사용 가능한 라이프타임들의 불일치이며, 해결책은 이 문제들을 해결하는 것이지 'static 라이프타임으로 특정하는 것이 아닙니다. [(원문 링크)](https://rinthel.github.io/rust-lang-book-ko/ch10-03-lifetime-syntax.html)
 
 
 lifetime 을 보장할 수 없는 자료형이기 때문에 &str 자체로 구조체에서 사용할 수 없지만, program binary 로 존재하기 때문에 언제나 static lifetime 을 가진다는... 아이러니한 구조이다.   
@@ -273,11 +274,11 @@ type of a_to_string  : alloc::string::String
 type of a_to_owned   : alloc::string::String
 type of a_into       : alloc::string::String
 ```
-참고로 Crate alloc 대해 간단히 확인해 보면, [(원문 링크)](https://doc.rust-lang.org/alloc/index.html)
+참고로 Crate alloc 대해 간단히 확인해 보면,
 
 >This library provides smart pointers and collections for managing heap-allocated values.
 
->This library, like libcore, normally doesn’t need to be used directly since its contents are re-exported in the std crate. Crates that use the #![no_std] attribute however will typically not depend on std, so they’d use this crate instead.
+>This library, like libcore, normally doesn’t need to be used directly since its contents are re-exported in the std crate. Crates that use the #![no_std] attribute however will typically not depend on std, so they’d use this crate instead. [(원문 링크)](https://doc.rust-lang.org/alloc/index.html)
 
 #### 4.1 to_string()
 
@@ -292,7 +293,9 @@ fn main() {
     println!("{}", true.to_string());   // true   
 }
 ```
-해당 method 는 Trait std::string::ToString 에 정의 되어 있으며, 이미 다양한 자료형에 대해 String 자료형으로 return 하도록 implementors 가 정의 되어 있기 때문에 숫자에 적용해도 String 형을 얻을 수 있다. [(원문 링크)](https://doc.rust-lang.org/std/string/trait.ToString.html)
+해당 method 는 Trait std::string::ToString 에 정의 되어 있으며, 이미 다양한 자료형에 대해 String 자료형으로 return 하도록 implementors 가 정의 되어 있기 때문에 숫자에 적용해도 String 형을 얻을 수 있다.
+
+[(공식 문서 링크)](https://doc.rust-lang.org/std/string/trait.ToString.html)
 
 #### 4.2 String::from()
 
@@ -307,12 +310,12 @@ fn main() {
     println!("{}", String::from(true));  // 실행불가    
 }
 ```
-공식문서 [원문 링크](https://rinthel.github.io/rust-lang-book-ko/ch08-02-strings.html) 에 다음과 같이 언급되어 있다.
+공식문서에 다음과 같이 언급되어 있다.
 
 >String::from과 .to_string은 정확히 똑같은 일을 하며, 따라서 어떤 것을 사용하는가는 여러분의 스타일에 따라 달린 문제입니다.
->스트링이 UTF-8로 인코딩되었음을 기억하세요. 즉, 아래의 Listing 8-14에서 보는 것처럼 우리는 인코딩된 어떤 데이터라도 포함시킬 수 있습니다:
+>스트링이 UTF-8로 인코딩되었음을 기억하세요. 즉, 아래의 Listing 8-14에서 보는 것처럼 우리는 인코딩된 어떤 데이터라도 포함시킬 수 있습니다: [원문 링크](https://rinthel.github.io/rust-lang-book-ko/ch08-02-strings.html)
 
-그러나 String::from() 을 사용한 경우, 문자열 타입일 때만 정상적으로 동작함을 볼수 있다.  이는 rust standard crate 에 대해 설명한 문서를 보면 차이점을 이해 할 수 있다.
+그러나 String::from() 을 사용한 경우, 문자열 타입일 때만 정상적으로 동작함을 볼수 있다.  이는 rust standard crate 문서를 보면 차이점을 이해 할 수 있다.
 
 to_string() 이 return 자료형을 String 형으로 변환하는데 특화된 method 라면, std::convert::From Trait 은 광의적으로 이미 작성된 implementors 에 명시된 모든 자료형을 변환할 수 있게 해주며, &str -> String (struct) 는 그 중 하나의 하나일 뿐이다.
 
@@ -321,10 +324,10 @@ to_string() 이 return 자료형을 String 형으로 변환하는데 특화된 m
 #### 4.3 to_owned()
 method 명이 원래 다른 목적으로 만들어졌음을 추측하게 만든다. 공식 문서를 우선 살펴 보면,
 
-> #### Trait std::borrow::ToOwned [(원문 링크)](https://doc.rust-lang.org/std/borrow/trait.ToOwned.html)
+> #### Trait std::borrow::ToOwned
 >
 > fn to_owned(&self) -> Self::Owned
-> Creates owned data from borrowed data, usually by cloning.
+> Creates owned data from borrowed data, usually by cloning. [(원문 링크)](https://doc.rust-lang.org/std/borrow/trait.ToOwned.html)
 
 CDOE 9
 ```rust
@@ -356,8 +359,8 @@ clone() 과 기능이 비슷하지만, clone() 은 동일 자료형 (ex. &str ->
 
 역시 공시문서를 확인하면 다음과 같이 명시되어 있다.
 
-> #### Trait std::convert::Into [(원문 링크)](https://doc.rust-lang.org/std/convert/trait.Into.html)
-> A value-to-value conversion that consumes the input value. The opposite of From.
+> #### Trait std::convert::Into
+> A value-to-value conversion that consumes the input value. The opposite of From. [(원문 링크)](https://doc.rust-lang.org/std/convert/trait.Into.html)
 
 앞에서 From 을 다음과 같이 사용하였다.
 
