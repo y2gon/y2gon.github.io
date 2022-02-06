@@ -2,7 +2,7 @@
 title: string literal(&str)
 date: 2022-02-03
 category: Rust from Scratch
-tags : [rust, string literal, &str, String]
+tags : [rust, string literal, &str, String, DST, Dynamically Sized Type, to_string, to_owned, String::from, static, lifetime, clone, into()]
 layout: post
 ---
 
@@ -14,6 +14,7 @@ Rust 를 배우면서 여러가지로 개념과 사용법을 배우는 것이 �
 문자열 관련, rust 에는 두가지 자료형이 존재한다.
 
 * Dynamically Sized Type (DST) : String
+
 * Fixed Sized Type : string literal (&str)
 
 String type 의 경우, 해당 Data 의 길이을 고정할 수 없는 경우(mutable)가 발생하므로 저장 공간을 유동적으로 확보할 수 있는 Heap 영역에 저장 한다.  그 밖의 모든 DST type (vector, Slice, String, trait object) 은 모두 Heap 영역을 사용한다.

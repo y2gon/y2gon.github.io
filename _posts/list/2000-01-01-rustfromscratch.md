@@ -7,7 +7,7 @@ layout: post
 
 ### 개념 정리
 
-#### [string literal(&str)]({{site.baseurl}}/rust from scratch/001stringliteral.html)
+#### * [string literal(&str)]({{site.baseurl}}/rust from scratch/001stringliteral.html)
 
 #### []({{site.baseurl}}/rust form scratch/002storingdata.html)
 

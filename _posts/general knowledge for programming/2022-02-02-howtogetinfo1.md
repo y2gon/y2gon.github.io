@@ -1,14 +1,13 @@
 ---
-title: 컴퓨터는 어떻게 프로그래밍 언어를 이해하는가? (1)
+title: 컴퓨터가 수식과 구문구조를 이해하는 원리
 subtitle : 프로그래밍 언어론 - 원리와 실제
 date: 2022-02-02
 category: General Knowledge for Programming
-tags : [프로그래밍 언어, 구문법, syntax, 수식, expression, 구문구조, statement, 문맥-자유 문법, CFG, Context Free Grammar]
+tags : [프로그래밍 언어, 구문법, syntax, 수식, expression, 구문구조, statement, 문맥-자유 문법, CFG, Context Free Grammar, BNF, Backus-Naur Form]
 layout: post
 ---
 
 해당 내용은 책 [<프로그래밍 언어론 - 원리와 실제 (저자: 창병모)>](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9791185578729) 및 관련 검색으로 통해 학습한 내용임.
-
 
 ------------------------------------------------------------------------------
 
@@ -58,8 +57,11 @@ layout: post
                    | ...                                              
 
 #### 3. 결론
+
  * 프로그래밍 언어 구문법(Syntax) 가 입력되는 값의 최소단위(단어?) 기준으로 정의되어 있으며, 이를 기준으로 해석한다.
+
  * 만약 정의에 벗어나 표현을 입력했을 경우, Syntax error 를 작성자에게 알려 줄 수 있을 것이다.
+
  * Syntax 는 숫자만을 다루는 수식 (Expression) 과 CFG 에 근거하여 작성된 구문구조(statement) 가 있다.
 
 ------------------------------------------------------------------------------
@@ -149,6 +151,18 @@ String E 가 "3 + 4 * 5" 일 때, syntax 가 다음과 같이 정의된 프로�
        |   |   
       D(3) D(4)
 
-#### 4. 결론
+--------------------------------------------------------------------------------------------------
+
+### BNF(Backus-Naur Form)
+
+앞에서 작성한 syntax 를 BNF(Backus-Naur Form) 으로 작성하면 다음과 같다. (형식은 완전 동일)
+
+       <expr> -> <expr> + <term> | <term>
+       <term> -> <term> * <factor> | <factor>       
+       <factor> -> number | ( <expr> ) v
+
+#### 결론
+
  * 위 조건 하나로 더 복잡하고 다양한 형태에 대한 모호성 문제를 해결했다고 볼 수 없으나, 기본 원리는 동일할 것을 예상할 수 있다.
+
  * Parse Tree 를 이용한 분석 방법은 직관적이며, 컴퓨터가 실제 계산을 진행하지 않고, 어떻게 code 의 적합성을 판단하는지 알 수 있다.   
