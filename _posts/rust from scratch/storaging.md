@@ -1,8 +1,8 @@
 ---
-title: string literal(&str)
+title: Casting
 date: 2022-02-03
 category: Rust from Scratch
-tags : [rust, string literal, &str, String]
+tags : [rust, Casting, type cast]
 layout: post
 ---
 

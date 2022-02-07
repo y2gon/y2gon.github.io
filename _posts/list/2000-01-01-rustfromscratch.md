@@ -9,4 +9,4 @@ layout: post
 
  * [string literal(&str)]({{site.baseurl}}/rust from scratch/001stringliteral.html)
 
- * []({{site.baseurl}}/rust form scratch/002storingdata.html)
+ * [형변환 (Type Conversion)]({{site.baseurl}}/rust form scratch/002storingdata.html)

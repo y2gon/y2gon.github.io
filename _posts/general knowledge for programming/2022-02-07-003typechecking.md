@@ -3,7 +3,7 @@ title: 타입 검사 (Type Checking)
 subtitle : 프로그래밍 언어론 - 원리와 실제
 date: 2022-02-07
 category: General Knowledge for Programming
-tags : [프로그래밍 언어, type Checking, 타입검사]
+tags : [프로그래밍 언어, type Checking, 타입검사, 타입 시스템, Type System, 타입 규칙, typing rule, 타입 환경, type environment, 안전한 타입 시스템, sound type system, 강한 타입 언어, strongly typed language, 약한 타입 언어, weakly typed language, 정적 타입 언어, statically typed language, 동적 타입 언어, Dynamically typed language, 자동 형변환, implicit type conversion, automatic type conversion]
 layout: post
 ---
 
@@ -79,7 +79,7 @@ Type checking 이 Syntax analysis 보다 늦게 개발 되었으며, 각 프로�
 
  * Java, ML, C#, Pythone 등
 
-#### 2.2 약간 타입 언어 (weakly typed language)
+#### 2.2 약한 타입 언어 (weakly typed language)
 
  * 느슨한 타입 규칙을 적용하여, 타입 검사를 하더라도 이 검사를 통과한 프로그림애 실행 중에 타입 오류를 발생 시킬 수 있다.
 
@@ -165,4 +165,4 @@ name = 34;      // integer type 으로 새로 대입해도 오류가 발생하�
 
 * (2) 'A' 의 ASCII 값 (65) 를 실수로 전환하여 값을 저장함.
 
-* (3) char 에서 받을 수 없는 음수를 형변환 없이 그대로 받으므로써, 의미를 알수 없는 값을 가지게 됨. 
+* (3) char 에서 받을 수 없는 음수를 형변환 없이 그대로 받으므로써, 의미를 알수 없는 값을 가지게 됨.
