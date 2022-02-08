@@ -13,4 +13,4 @@ layout: post
 
   * [타입 검사 (Type Checking)]({{site.baseurl}}/general knowledge for programming/003typechecking.html)
 
-  * []({{site.baseurl}}/general knowledge for programming/.html)
+  * [함수 구현/호출의 원리]({{site.baseurl}}/general knowledge for programming/004function.html)
