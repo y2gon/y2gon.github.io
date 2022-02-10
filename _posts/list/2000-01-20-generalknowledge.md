@@ -9,7 +9,7 @@ layout: post
 
   * [컴퓨터가 수식과 구문구조를 이해하는 원리]({{site.baseurl}}/general knowledge for programming/001howtogetinfo1.html)
 
-  * [Token 의 정의 부터 AST 작성까지]({{site.baseurl}}/general knowledge for programming/001howtogetinfo2.html)
+  * [Token 의 정의 부터 AST 작성까지]({{site.baseurl}}/general knowledge for programming/002howtogetinfo2.html)
 
   * [타입 검사 (Type Checking)]({{site.baseurl}}/general knowledge for programming/003typechecking.html)
 

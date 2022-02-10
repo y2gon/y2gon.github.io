@@ -6,9 +6,7 @@ tags : [rust, string literal, &str, String, DST, Dynamically Sized Type, to_stri
 layout: post
 ---
 
-Rust 를 배우면서 여러가지로 개념과 사용법을 배우는 것이 어려웠는데, 그중 하나는 문자열 처리 였다.
-
-이번 기회를 통해 이를 정리해 보고자 한다.
+Rust 공부를 시작하면서, 문자열을 다루는 것조차 쉽지 않아 이를 정리해 보았습니다.
 
 --------------------------------------------------------------------------------------
 문자열 관련, rust 에는 두가지 자료형이 존재한다.
@@ -293,7 +291,7 @@ fn main() {
     println!("{}", true.to_string());   // true   
 }
 ```
-해당 method 는 Trait std::string::ToString 에 정의 되어 있으며, 이미 다양한 자료형에 대해 String 자료형으로 return 하도록 implementors 가 정의 되어 있기 때문에 숫자에 적용해도 String 형을 얻을 수 있다.
+해당 method 는 Trait std::string::ToString 에 정의 되어 있으며, 이미 다양한 자료형에 대해 String 자료형으로 return 하도록 Implementations 가 정의 되어 있기 때문에 숫자에 적용해도 String 형을 얻을 수 있다.
 
 [(공식 문서 링크)](https://doc.rust-lang.org/std/string/trait.ToString.html)
 
@@ -317,7 +315,7 @@ fn main() {
 
 그러나 String::from() 을 사용한 경우, 문자열 타입일 때만 정상적으로 동작함을 볼수 있다.  이는 rust standard crate 문서를 보면 차이점을 이해 할 수 있다.
 
-to_string() 이 return 자료형을 String 형으로 변환하는데 특화된 method 라면, std::convert::From Trait 은 광의적으로 이미 작성된 implementors 에 명시된 모든 자료형을 변환할 수 있게 해주며, &str -> String (struct) 는 그 중 하나의 하나일 뿐이다.
+to_string() 이 return 자료형을 String 형으로 변환하는데 특화된 method 라면, std::convert::From Trait 은 광의적으로 이미 작성된 Implementations 에 명시된 모든 자료형을 변환할 수 있게 해주며, &str -> String (struct) 는 그 중 하나의 하나일 뿐이다.
 
 (해당 내용은 아직 이해가 부족하여 추가 학습이 필요함.) [(공식 문서 링크)](https://doc.rust-lang.org/std/convert/trait.From.html#tymethod.from)
 
@@ -367,9 +365,9 @@ clone() 과 기능이 비슷하지만, clone() 은 동일 자료형 (ex. &str ->
        let 변수:String = String::form("문자열"):
                   ㄴ> 자동 type 지정
 
-그리고 이렇게 해서 형변환이 가능한 이유는, std::convert::From Trait 에 &str -> String implementor 가 이미 정의 되어 있기 때문이다.
+그리고 이렇게 해서 형변환이 가능한 이유는, std::convert::From Trait 에 &str -> String Implementation 가 이미 정의 되어 있기 때문이다.
 
-From 에 impementing 된 자료형은 자동으로 Into 에도 implementor 가 생성된다고 명시되어 있다.
+From 에 impementing 된 자료형은 자동으로 Into 에도 Implementation 가 생성된다고 명시되어 있다.
 따라서 into() 를 사용하여 동일 작업을 할 수 있으며, 사용 방법은 다음과 같다.
 
        let 변수:String = "문자열".into();
@@ -380,7 +378,7 @@ From 에 impementing 된 자료형은 자동으로 Into 에도 implementor 가 �
 
 * 일반적으로 string literal 을 포함, 일반 데이터를 String 으로 형변환을 하려면, to_string() 을 사용하는 것이 가장 무난해 보인다.
 
-* From Trait 의 경우, 좀더 다양한 경우에 사용될 수 있다. (ex. i32 -> f64, char -> u32) 특히 rust 는 자동 형변환이 허용되지 않으므로, 이를 잘 사용해야 하며, 사용자가 임의로 작성한 struct 에 대해서도 implementor 를 추가하여 사용할 수 있을 듯 하다.
+* From Trait 의 경우, 좀더 다양한 경우에 사용될 수 있다. (ex. i32 -> f64, char -> u32) 특히 rust 는 자동 형변환이 허용되지 않으므로, 이를 잘 사용해야 하며, 사용자가 임의로 작성한 struct 에 대해서도 Implementation 를 추가하여 사용할 수 있을 듯 하다.
 
 * to_owned() 의 경우, borrowed type 의 ownership 을 해결할 수 있으므로, struct member 로 사용할 자료형이 DST 인 경우, 활용할 수 있을 듯 하다.
 
