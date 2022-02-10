@@ -13,6 +13,6 @@ layout: post
 
  * [Method (Implementation) 문법 정리]({{site.baseurl}}/rust%20from%20scratch/0280methods.html)
 
- * [Generic (1)]({{site.baseurl}}/rust%20from%20scratch/030generic1.html)
+ * []({{site.baseurl}}/rust%20from%20scratch/030generic1.html)
 
 #### Rust 로 작성하는 TCP/IP 소켓 프로그래밍
